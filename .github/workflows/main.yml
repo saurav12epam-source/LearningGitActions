@@ -1,17 +1,18 @@
 name: test-workflow
+runs-on: ubuntu-latest
 on:
  [push]
 jobs:
  job1:
    name: "build"
-   runs-on: ubuntu-latest
+   
    steps:
          
-      - run:  echo "hi"
+      - run:  echo "hi first job"
         
   job2:
    name: "test"
-   runs-on: ubuntu-latest
+  
    steps:
       - needs: [job1]
-      - run:  echo "hi"
+      - run:  echo "hi second job"
