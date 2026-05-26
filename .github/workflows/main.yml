@@ -6,7 +6,12 @@ jobs:
    name: "build"
    runs-on: ubuntu-latest
    steps:
-   
+         
       - run:  echo "hi"
-
-  
+        
+  job2:
+   name: "test"
+   runs-on: ubuntu-latest
+   steps:
+      - needs: [job1]
+      - run:  echo "hi"
