@@ -4,12 +4,10 @@ on:
  [push]
 jobs:
  job1:
-   name: "build"
-   steps:
-     - run:  echo "hi first job"
- job2:
-  name: "test"
-  steps:
-    - continue-on-error: ps:
-      - needs: [job1]
-      - run:  echo "hi second job"
+   uses: actions/checkout@v6.0.2
+  with:
+    # Repository name with owner. For example, actions/checkout
+    repository: # optional, default is ${{ github.repository }}
+    # The branch, tag or SHA to checkout. When checking out the repository that triggered a workflow, this defaults to the reference or SHA for that event.  Otherwise, uses the default branch.
+
+ 
