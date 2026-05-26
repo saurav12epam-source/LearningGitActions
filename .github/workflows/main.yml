@@ -8,8 +8,8 @@ jobs:
    steps:
      - run:  echo "hi first job"
  job2:
-  
   name: "test"
-   steps:
+  steps:
+    - continue-on-error: ps:
       - needs: [job1]
       - run:  echo "hi second job"
