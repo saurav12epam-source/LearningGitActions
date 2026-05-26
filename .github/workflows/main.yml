@@ -5,14 +5,11 @@ on:
 jobs:
  job1:
    name: "build"
-   
    steps:
-         
-      - run:  echo "hi first job"
-        
-  job2:
-   name: "test"
+     - run:  echo "hi first job"
+ job2:
   
+  name: "test"
    steps:
       - needs: [job1]
       - run:  echo "hi second job"
